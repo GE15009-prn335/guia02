@@ -1,0 +1,22 @@
+version: '2'
+payara:
+  container_name: payara-imagen
+  image: payara/server-full
+  ports:
+  - "4848:4848" "8080:8080"
+    
+postgres:
+  container_name: postgres-imagen
+  restart: always
+  image: postgres
+  ports:
+  -"5432:5432"
+environment:
+  POSTGRES_DB: posts
+  POSTGRES_USER: mortal2017
+  POSTGRES_PASSWORD: prn335
+    
+volumes_from:
+  - data
+
+  
